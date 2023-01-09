@@ -2,11 +2,15 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Number {
+    private final static int MIN_VAL = 1;
+    private final static int MAX_VAL = 100;
+    private final static int ATTEMPTS_AMOUNT = 7;
+
     public static void guessNumber() {
-        int randomNum = (int)(Math.random() * 99 + 1);
+        int randomNum = (int)(Math.random() * (MAX_VAL - MIN_VAL) + MIN_VAL);
         Scanner in = new Scanner(System.in);
-        System.out.println("Hello friend!!! Input any number from 1 to 100 included");
-        for (int i = 0; i < 7; i++) {
+        System.out.format("Hello friend!!! Input any number from %d to %d included\n", MIN_VAL, MAX_VAL);
+        for (int i = 0; i < ATTEMPTS_AMOUNT; i++) {
             int num;
             try {
                 num = in.nextInt();
@@ -16,8 +20,8 @@ public class Number {
                 i--;
                 continue;
             }
-            if (num < 1 || num > 100) {
-                System.out.println("Number should be between 1 and 100 included");
+            if (num < MIN_VAL || num > MAX_VAL) {
+                System.out.format("Number should be between %d and %d included\n", MIN_VAL, MAX_VAL);
                 i--;
                 continue;
             }
