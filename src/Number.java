@@ -6,7 +6,7 @@ public class Number {
         int randomNum = (int)(Math.random() * 99 + 1);
         Scanner in = new Scanner(System.in);
         System.out.println("Hello friend!!! Input any number from 1 to 100 included");
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 6; i++) {
             int num;
             try {
                 num = in.nextInt();
